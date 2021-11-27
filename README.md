@@ -1,12 +1,20 @@
-# `Z-A-MAN`
+- [Introduction](#introduction)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
 
-A Zsh-Zinit extension (i.e. an
-[annex](http://z-shell.github.io/zinit/wiki/Annexes/)) that automatically generates:
+# Introduction
 
-  - man pages for all plugins and snippets (out of plugin README.md files by
-    using [ronn](https://github.com/rtomayko/ronn) converter),
-  - code-documentation manpages (by using
-    [zshelldoc](https://github.com/z-shell/zshelldoc) project).
+> **[?]**
+> This repository not compatible with previous versions (zplugin, zinit).
+>
+> Please upgrade to [ZI](https://github.com/z-shell-zi)
+
+A [ZI](https://github.com/z-shell/zi) Annex (i.e. an extension) that automatically generates:
+
+- man pages for all plugins and snippets (out of plugin README.md files by
+  using [ronn](https://github.com/rtomayko/ronn) converter),
+- code-documentation manpages (by using
+  [zshelldoc](https://github.com/z-shell/zshelldoc) project).
 
 Man extension is being activated at clone of a plugin and also at update of it
 and it then generates the manpages. To view them there's a `zman` command:
@@ -30,10 +38,8 @@ Code documentation for the plugin.zsh file (of the project):
 
 # Installation
 
-Simply load as a plugin. This will install the extension within Zinit:
+Simply load as a plugin. This will install the extension within [ZI](https://github.com/z-shell/zi):
 
 ```zsh
-zinit light z-shell/z-a-man
+zi light z-shell/z-a-man
 ```
-
-<!-- vim:set ft=markdown tw=80: -->

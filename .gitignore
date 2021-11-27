@@ -13,7 +13,9 @@ zsdoc/
 # Zsh
 *.zwc
 *zcompdump*
+._zi
 ._zinit
+.zi_lastupd
 .zinit_lastupd
 
 # Prerequisites

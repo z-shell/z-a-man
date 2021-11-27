@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
+# shellcheck shell=sh
 # Can be run as a script and as a function
-
 emulate -LR zsh
 setopt extendedglob warncreateglobal typesetsilent noshortloops
 
@@ -24,7 +24,7 @@ zparseopts -E -D -A opthash c h -help || \
 
 # Converts plugin spec like "user/plugin" into two parts
 # returned in reply, namely the user and plugin
--zplg-any-to-user-plugin() {
+-zi-any-to-user-plugin() {
     # Two components given?
     # That's a pretty fast track to call this function this way
     if [[ -n "$2" ]];then
@@ -41,7 +41,7 @@ zparseopts -E -D -A opthash c h -help || \
 
     # Is it absolute path in zplugin format?
     if [[ "$1" = "%"* ]]; then
-        reply=( "%" "${${${1/\%HOME/$HOME}/\%SNIPPETS/${ZPLGM[SNIPPETS_DIR]}}#%}" )
+        reply=( "%" "${${${1/\%HOME/$HOME}/\%SNIPPETS/${ZI[SNIPPETS_DIR]}}#%}" )
         reply[2]=${~reply[2]}
         return 0
     fi
@@ -74,12 +74,12 @@ for pors (${parray[@]}) {
         ( ! -f ''(#i)$pors/README(#qN[1]) || \
             ''(#i)$pors/README.md(#qN[1]) -nt ''(#i)$pors/README(#qN[1]) )
     ]]; then
-        -zplg-any-to-user-plugin "${pors:t}"
+        -zi-any-to-user-plugin "${pors:t}"
         # local type="$1" user="$2" plugin="$3" id_as="$4" dir="$5"
         :zp-zman-handler plugin "${reply[-2]}" "${reply[-1]}" \
                     id_as="${${pors:t}//---//}" "$pors"
     elif [[ ! -f ''(#i)$pors/README.md(#qN[1]) ]]; then
-        -zplg-any-to-user-plugin "${pors:t}"
+        -zi-any-to-user-plugin "${pors:t}"
         print -P -- "%F{38}zman z-plugin: %F{154}No README.md in the \
 %F{220}${reply[-1]}%F{154} plugin%f"
     fi
@@ -134,4 +134,3 @@ or no code documentation available for: %F{220}${(j:, :)@}%F{154}%f"
         fi
     fi
 fi
-# vim:ft=zsh:sw=4:sts=4:et
