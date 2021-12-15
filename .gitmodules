@@ -1,0 +1,6 @@
+[submodule "ronn"]
+	path = ronn
+	url = https://github.com/rtomayko/ronn
+[submodule "zsdoc"]
+	path = zsdoc
+	url = https://github.com/z-shell/zsdoc
