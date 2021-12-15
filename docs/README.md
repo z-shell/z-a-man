@@ -4,8 +4,9 @@
 
 ## Introduction
 
-> **Note:** This repository is outdated and may not work properly. Please consider opening a pull request or an issue,
-> if would like to speed up development of this repository.
+> **Note:** 
+> - This repository is outdated and may not work properly.
+> - Please consider opening a pull request or an issue, if would like to speed up development.
 
 A [ZI](https://github.com/z-shell/zi) Annex (i.e. an extension) that automatically generates:
 
